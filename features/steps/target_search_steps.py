@@ -1,5 +1,5 @@
-from itertools import product
-from lib2to3.fixes.fix_input import context
+##from itertools import product
+##from lib2to3.fixes.fix_input import context
 
 from selenium.webdriver.common.by import By
 from behave import given, when, then
@@ -17,15 +17,15 @@ PRODUCT_TITLE = (By.CSS_SELECTOR, "[data-test='product-title']")
 
 
 @given('Open target main page')
-def open_target_page(context):
-    context.driver.get('https://www.target.com/')
-    sleep(10)
+def open_main(context):
+    context.app.main_page.open_main()
 
 @when('Search for {product}')
 def search_product(context, product):
-    context.driver.find_element(*SEARCH_FIELD).send_keys(product)
-    context.driver.find_element(*SEARCH_BTN).click()
-    sleep(10)
+    context.app.header.search_product(product)
+    #context.driver.find_element(*SEARCH_FIELD).send_keys(product)
+    #context.driver.find_element(*SEARCH_BTN).click()
+    #sleep(10)
 
 @when('Click on Add to Cart button')
 def target_click_add_to_cart(context):

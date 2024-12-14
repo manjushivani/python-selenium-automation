@@ -9,11 +9,12 @@ CART_ICON = (By.CSS_SELECTOR, "[data-test='@web/CartLink']")
 
 @then('Click on Cart icon')
 def click_cart(context):
-    context.driver.find_element(*CART_ICON).click()
+    context.app.header.click_cart(cart=CART_ICON)
 
 @then("Verify 'Your cart is empty' message is shown")
 def verify_cart_empty(context):
-    expected_result = 'Your cart is empty'
-    actual_result = context.driver.find_element(By.CSS_SELECTOR, "[data-test='boxEmptyMsg']").text
-    assert expected_result == actual_result, f'Expected {expected_result} did not match actual {actual_result}'
+    context.app.cart_page.verify_cart_empty()
+    #expected_result = 'Your cart is empty'
+    #actual_result = context.driver.find_element(By.CSS_SELECTOR, "[data-test='boxEmptyMsg']").text
+    #assert expected_result == actual_result, f'Expected {expected_result} did not match actual {actual_result}'
 

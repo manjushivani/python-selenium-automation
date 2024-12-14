@@ -15,6 +15,5 @@ class Header(BasePage):
         sleep(10)
 
     def click_cart(self, cart):
-        self.input_text(cart, *self.CART_ICON)
         self.click(*self.CART_ICON)
         sleep(10)
