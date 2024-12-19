@@ -6,8 +6,8 @@ from behave import given, when, then
 from time import sleep
 from selenium.webdriver.support import expected_conditions as EC
 
-SEARCH_FIELD = (By.ID, 'search')
-SEARCH_BTN = (By.XPATH, "//button[@data-test='@web/Search/SearchButton']")
+#SEARCH_FIELD = (By.ID, 'search')
+#SEARCH_BTN = (By.XPATH, "//button[@data-test='@web/Search/SearchButton']")
 ADD_TO_CART_BTN = (By.CSS_SELECTOR, "[id*='addToCartButton']")
 ADD_TO_CART_SIDE_NAV_BTN = (By.CSS_SELECTOR, "[data-test='content-wrapper'] [id*='addToCart']")
 PRODUCT_NAME = (By.CSS_SELECTOR, "[data-test='content-wrapper'] h4")
@@ -29,7 +29,8 @@ def search_product(context, product):
 
 @when('Click on Add to Cart button')
 def target_click_add_to_cart(context):
-    context.driver.find_element(*ADD_TO_CART_BTN).click()  # always clicks on 1st Add to cart btn
+    context.app.cart_page.add_to_cart()
+    #context.driver.find_element(*ADD_TO_CART_BTN).click()  # always clicks on 1st Add to cart btn
     #context.driver.find_elements(By.CSS_SELECTOR, "[id*='addToCartButton']")[0].click()
     #context.driver.wait.until(EC.visibility_of_element_located(ADD_TO_CART_BTN))
     sleep(10)

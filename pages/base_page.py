@@ -26,3 +26,6 @@ class BasePage:
     def verify_text(self, expected_text, *locator):
         actual_text = self.find_element(*locator).text
         assert expected_text == actual_text, f'Expected {expected_text}, but got {actual_text}'
+
+    def send_keys(self, text, *locator):
+        self.driver.find_element(*locator).send_keys(text)
