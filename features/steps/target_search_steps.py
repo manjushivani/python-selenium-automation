@@ -8,7 +8,7 @@ from selenium.webdriver.support import expected_conditions as EC
 
 #SEARCH_FIELD = (By.ID, 'search')
 #SEARCH_BTN = (By.XPATH, "//button[@data-test='@web/Search/SearchButton']")
-ADD_TO_CART_BTN = (By.CSS_SELECTOR, "[id*='addToCartButton']")
+#ADD_TO_CART_BTN = (By.CSS_SELECTOR, "[id*='addToCartButton']")
 ADD_TO_CART_SIDE_NAV_BTN = (By.CSS_SELECTOR, "[data-test='content-wrapper'] [id*='addToCart']")
 PRODUCT_NAME = (By.CSS_SELECTOR, "[data-test='content-wrapper'] h4")
 PRODUCT_IMG = (By.CSS_SELECTOR, 'img')
